@@ -1,13 +1,15 @@
 <x-layout>
-    <div class="row d-flex justify-content-center">
-        <div class="col col-md-8 col-lg-6">
-            <div class="input-group mb-2">
-                <input type="search" class="form-control " placeholder="Search" aria-label="Search"
-                    aria-describedby="search-addon" />
-                <button type="button" class="btn btn-outline-primary">search</button>
+    <form action="{{ route('home') }}">
+        <div class="row d-flex justify-content-center">
+            <div class="col col-md-8 col-lg-6">
+                <div class="input-group mb-2">
+                    <input type="search" name="search" class="form-control " placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-outline-primary">search</button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 
     <div class="row">
         @foreach ($threads as $thread)
