@@ -16,7 +16,7 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        $threads = $this->threadRepository->getAll();
+        $threads = $this->threadRepository->paginate(7);
 
         return view('home.index')->with('threads', $threads);
     }

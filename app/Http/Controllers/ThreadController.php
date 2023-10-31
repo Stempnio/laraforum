@@ -22,7 +22,7 @@ class ThreadController extends Controller
             abort(404);
         }
 
-        $posts = $thread->posts()->paginate(10);
+        $posts = $thread->posts()->paginate(7);
 
         return view('thread.index')->with('posts', $posts);
     }

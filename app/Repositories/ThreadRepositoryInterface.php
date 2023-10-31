@@ -9,6 +9,8 @@ interface ThreadRepositoryInterface
 {
     public function getAll(): Collection;
 
+    public function paginate(int $perPage);
+
     public function getById(int $id): ?Thread;
 
     public function create(string $title, int $userId): void;

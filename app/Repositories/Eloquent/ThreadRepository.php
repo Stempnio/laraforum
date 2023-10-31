@@ -13,6 +13,11 @@ class ThreadRepository implements ThreadRepositoryInterface
         return Thread::all();
     }
 
+    public function paginate(int $perPage)
+    {
+        return Thread::paginate($perPage);
+    }
+
     public function getById(int $id): ?Thread
     {
         return Thread::find($id);
