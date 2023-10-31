@@ -25,7 +25,7 @@
             <button class="btn btn-lg btn-primary w-75 m-4" type="submit">Sign up</button>
             <p class="m-0">Already have an account?</p>
         </form>
-        <a class="btn btn-lg m-0" href="/login" role="button">Sign in</a>
+        <a class="btn btn-lg m-0" href="{{ route('login') }}" role="button">Sign in</a>
         </div>
         </div>
         @if ($errors->any())
