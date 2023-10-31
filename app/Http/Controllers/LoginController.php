@@ -19,7 +19,9 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt($validated)) {
-            return redirect('/')->with('success', 'You are now logged in');
+            $request->session()->regenerate();
+
+            return redirect()->route('home')->with('success', 'You are now logged in');
         }
 
         return back()->withErrors([
