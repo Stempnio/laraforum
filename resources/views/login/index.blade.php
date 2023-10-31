@@ -19,22 +19,20 @@
         </div>
         </div>
         @if ($errors->any())
-            <div class="alert alert-danger m-3 alert-dismissible fade show" role="alert">
+            <x-alert type="danger">
                 @foreach ($errors->all() as $error)
                     <p>
                         {{ $error }}
                     </p>
                 @endforeach
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            </x-alert>
         @endif
         @if (session('success'))
-            <div class="alert alert-success m-3 alert-dismissible fade show" role="alert">
+            <x-alert type="success">
                 <p>
                     {{ session('success') }}
                 </p>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            </x-alert>
         @endif
     </x-auth-card>
 </x-centered-layout>
