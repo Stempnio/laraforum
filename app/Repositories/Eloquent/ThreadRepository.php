@@ -8,15 +8,17 @@ use Illuminate\Support\Collection;
 
 class ThreadRepository implements ThreadRepositoryInterface
 {
-    public function getAll(): Collection
+    public function get($perPage = null, $filters = null)
     {
-        return Thread::all();
+        $query = Thread::query();
+
+        if ($filters) {
+            $query = $query->filter($filters);
+        }
+
+        return $perPage ? $query->paginate($perPage) : $query->get();
     }
 
-    public function paginate(int $perPage)
-    {
-        return Thread::paginate($perPage);
-    }
 
     public function getById(int $id): ?Thread
     {

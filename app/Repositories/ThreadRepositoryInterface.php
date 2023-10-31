@@ -7,9 +7,7 @@ use Illuminate\Support\Collection;
 
 interface ThreadRepositoryInterface
 {
-    public function getAll(): Collection;
-
-    public function paginate(int $perPage);
+    public function get(?int $perPage = null, ?array $filters = null);
 
     public function getById(int $id): ?Thread;
 
