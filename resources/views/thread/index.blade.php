@@ -6,4 +6,8 @@
             <span class="mt-1 text-secondary">{{ $post->created_at }}</span>
         </div>
     @endforeach
+
+    <x-bottom-pagination>
+        {{ $posts->links() }}
+    </x-bottom-pagination>
 </x-layout>
