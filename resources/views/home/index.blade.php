@@ -12,7 +12,7 @@
     <div class="row">
         @foreach ($threads as $thread)
             <div class="col-12 col-sm-6 col-lg-4">
-                <a href="#" class="text-decoration-none">
+                <a href="{{ route('thread', $thread->id) }}" class="text-decoration-none">
                     <div class="card shadow border-0 p-3 m-2">
                         <p class="fs-5 fw-bold text-start">{{ $thread->title }}</p>
                         Number of posts: {{ $thread->posts->count() }}
