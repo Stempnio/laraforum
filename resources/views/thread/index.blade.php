@@ -7,7 +7,8 @@
         </div>
     @endforeach
 
-    <x-bottom-pagination>
+    <x-pagination-row>
         {{ $posts->links() }}
-    </x-bottom-pagination>
+    </x-pagination-row>
+
 </x-layout>

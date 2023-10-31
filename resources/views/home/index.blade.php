@@ -25,8 +25,8 @@
         @endforeach
     </div>
 
-    <x-bottom-pagination>
+    <x-pagination-row>
         {{ $threads->links() }}
-    </x-bottom-pagination>
+    </x-pagination-row>
 
 </x-layout>
