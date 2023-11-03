@@ -40,7 +40,7 @@ class ThreadController extends Controller
 
         $this->threadRepository->create(title: $title, userId: $userId);
 
-        return redirect()->route('home')->with('success', 'Thread created successfully!');
+        return redirect()->route('home')->with('threadAddSuccess', 'Thread created successfully!');
     }
 
     public function create()
