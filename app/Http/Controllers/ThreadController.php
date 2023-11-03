@@ -26,7 +26,9 @@ class ThreadController extends Controller
 
         $posts = $thread->posts()->paginate(7);
 
-        return view('thread.index')->with('posts', $posts);
+        return view('thread.index')
+            ->with('posts', $posts)
+            ->with('threadId', $threadId);
     }
 
     public function store(Request $request): RedirectResponse
