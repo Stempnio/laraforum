@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\ThreadRepositoryInterface;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class ThreadController extends Controller
 {
@@ -25,5 +27,24 @@ class ThreadController extends Controller
         $posts = $thread->posts()->paginate(7);
 
         return view('thread.index')->with('posts', $posts);
+    }
+
+    public function store(Request $request): RedirectResponse
+    {
+        $formFields = $request->validate([
+            'title' => 'required|max:255|min:4'
+        ]);
+
+        $title = $formFields['title'];
+        $userId = $request->user()->id;
+
+        $this->threadRepository->create(title: $title, userId: $userId);
+
+        return redirect()->route('home')->with('threadAddSuccess', 'Thread created successfully!');
+    }
+
+    public function create()
+    {
+        return view('thread.create');
     }
 }

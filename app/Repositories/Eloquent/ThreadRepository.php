@@ -16,6 +16,8 @@ class ThreadRepository implements ThreadRepositoryInterface
             $query = $query->filter($filters);
         }
 
+        $query = $query->orderByDesc('updated_at');
+
         return $perPage ? $query->paginate($perPage) : $query->get();
     }
 

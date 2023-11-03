@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $filters = $request->all();
 
-        $threads = $this->threadRepository->get(7, $filters);
+        $threads = $this->threadRepository->get(perPage: 7, filters: $filters);
 
         return view('home.index')->with('threads', $threads);
     }

@@ -1,4 +1,10 @@
 <x-layout>
+    @if (session('threadAddSuccess'))
+        <x-alert type="success">
+            {{ session('threadAddSuccess') }}
+        </x-alert>
+    @endif
+
     <form action="{{ route('home') }}">
         <div class="row d-flex justify-content-center">
             <div class="col col-md-8 col-lg-6">
