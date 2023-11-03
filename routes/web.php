@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\ThreadController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/thread/{id}', [ThreadController::class, 'index'])->name('thread');
 
     Route::post('/thread', [ThreadController::class, 'store'])->name('storeThread');
+
+    Route::post('/thread/{id}/post/store', [PostController::class, 'store'])->name('createPost');
 });
 
 Route::middleware(['guest'])->group(function () {
