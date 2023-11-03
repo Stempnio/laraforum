@@ -4,5 +4,10 @@ namespace App\Repositories;
 
 interface PostRepositoryInterface
 {
-    public function create(int $threadId, int $userId, string $content);
+    public function getPostsByThread($threadId, $perPage = null);
+    public function create(
+        int $threadId,
+        int $userId,
+        string $content
+    );
 }
