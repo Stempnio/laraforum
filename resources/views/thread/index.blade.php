@@ -1,4 +1,6 @@
 <x-layout>
+    <x-add-post :$threadId />
+    <hr />
     @foreach ($posts as $post)
         <div class="card p-1 m-2 {{ $loop->iteration % 2 === 0 ? 'bg-light' : '' }}">
             <h6>{{ $post->user->email }}</h6>
