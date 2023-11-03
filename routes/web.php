@@ -14,7 +14,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
+    Route::get('/thread/create', [ThreadController::class, 'create'])->name('createThread');
+
     Route::get('/thread/{id}', [ThreadController::class, 'index'])->name('thread');
+
+    Route::post('/thread', [ThreadController::class, 'store'])->name('storeThread');
 });
 
 Route::middleware(['guest'])->group(function () {
